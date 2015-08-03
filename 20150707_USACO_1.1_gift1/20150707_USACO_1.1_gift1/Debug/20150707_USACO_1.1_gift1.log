@@ -1,0 +1,14 @@
+﻿Build started 2015/7/8 21:09:36.
+     1>Project "C:\Users\dirky_000\Desktop\面试题集合\USACO\20150707_USACO_1.1_gift1\20150707_USACO_1.1_gift1\20150707_USACO_1.1_gift1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt gift1.cpp
+         gift1.cpp
+     1>c:\users\dirky_000\desktop\面试题集合\usaco\20150707_usaco_1.1_gift1\20150707_usaco_1.1_gift1\gift1.cpp(13): warning C4101: 'friends_gifts' : unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\dirky_000\Desktop\面试题集合\USACO\20150707_USACO_1.1_gift1\Debug\20150707_USACO_1.1_gift1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\dirky_000\Desktop\面试题集合\USACO\20150707_USACO_1.1_gift1\Debug\20150707_USACO_1.1_gift1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\dirky_000\Desktop\面试题集合\USACO\20150707_USACO_1.1_gift1\Debug\20150707_USACO_1.1_gift1.lib" /MACHINE:X86 Debug\gift1.obj
+         20150707_USACO_1.1_gift1.vcxproj -> C:\Users\dirky_000\Desktop\面试题集合\USACO\20150707_USACO_1.1_gift1\Debug\20150707_USACO_1.1_gift1.exe
+     1>Done Building Project "C:\Users\dirky_000\Desktop\面试题集合\USACO\20150707_USACO_1.1_gift1\20150707_USACO_1.1_gift1\20150707_USACO_1.1_gift1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.90
