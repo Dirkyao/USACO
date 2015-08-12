@@ -1,0 +1,13 @@
+﻿Build started 2015/8/12 19:04:22.
+     1>Project "E:\programming\github_projects\USACO\20150811_USACO_1.3_milk\20150811_USACO_1.3_milk\20150811_USACO_1.3_milk.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt milk.cpp
+         milk.cpp
+       Link:
+         D:\Program Files\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\programming\github_projects\USACO\20150811_USACO_1.3_milk\Debug\20150811_USACO_1.3_milk.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\programming\github_projects\USACO\20150811_USACO_1.3_milk\Debug\20150811_USACO_1.3_milk.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\programming\github_projects\USACO\20150811_USACO_1.3_milk\Debug\20150811_USACO_1.3_milk.lib" /MACHINE:X86 Debug\milk.obj
+         20150811_USACO_1.3_milk.vcxproj -> E:\programming\github_projects\USACO\20150811_USACO_1.3_milk\Debug\20150811_USACO_1.3_milk.exe
+     1>Done Building Project "E:\programming\github_projects\USACO\20150811_USACO_1.3_milk\20150811_USACO_1.3_milk\20150811_USACO_1.3_milk.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.03
