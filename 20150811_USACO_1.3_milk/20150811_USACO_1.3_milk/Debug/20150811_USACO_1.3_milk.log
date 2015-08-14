@@ -1,4 +1,4 @@
-﻿Build started 2015/8/12 19:04:22.
+﻿Build started 2015/8/14 19:57:43.
      1>Project "E:\programming\github_projects\USACO\20150811_USACO_1.3_milk\20150811_USACO_1.3_milk\20150811_USACO_1.3_milk.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Program Files\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt milk.cpp
@@ -10,4 +10,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.03
+Time Elapsed 00:00:01.39
