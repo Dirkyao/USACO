@@ -10,7 +10,7 @@ using namespace std;
 
 #define MAX_HOLE 12
 
-int N, hole_pos[MAX_HOLE + 1][MAX_HOLE + 1] = { 0 };
+int N, hole_pos[MAX_HOLE + 1][2] = { 0 };
 int partner[MAX_HOLE + 1] = { 0 };
 int next_to_right[12] = { 0 };
 
