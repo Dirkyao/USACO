@@ -83,7 +83,7 @@ void paint(square(*room)[50], int row, int col, int r, int c,int comp)
 	}
 }
 
-info component_count(square(*room)[50], int row, int col)
+void component_count(square(*room)[50], int row, int col)
 {
 	for (int i = 0; i < row; i++)
 	{
@@ -96,6 +96,63 @@ info component_count(square(*room)[50], int row, int col)
 			}
 		}
 	}
+}
+
+bool check_size(info information, square(*room)[50], int row, int col, int r, int c,int direct)
+{
+	if (direct == 1)
+	{
+		if (r>0 && room[r][c].wall_north == 1)
+		{
+			if (room[r][c].component != room[r - 1][c].component)
+			{
+				if (information.size_combine < (information.comp_size[room[r][c].component] + information.comp_size[room[r - 1][c].component]))
+					return true;
+			}
+		}
+	}
+	else
+	{
+		if (c < col - 1 && room[r][c].wall_east == 1)
+		{
+			if (room[r][c].component != room[r][c + 1].component)
+			{
+				if (information.size_combine < (information.comp_size[room[r][c].component] + information.comp_size[room[r][c + 1].component]))
+					return true;
+			}
+		}
+	}
+	return false;
+}
+
+info check_wall(square(*room)[50], int row, int col,info information)
+{
+	for (int j = 0; j < col; j++)
+	{
+		for (int i = row - 1; i >= 0; i--)
+		{
+			bool update = check_size(information, room, row, col, i, j, 1);
+			if (update == true)
+			{
+				information.size_combine = information.comp_size[room[i][j].component] + information.comp_size[room[i - 1][j].component];
+
+				information.wall_removed[0] = i + 1;
+				information.wall_removed[1] = j + 1;
+				information.wall_removed[2] = 'N';
+			}
+
+			update = check_size(information, room, row, col, i, j, 2);
+			if (update == true)
+			{
+				information.size_combine = information.comp_size[room[i][j].component] + information.comp_size[room[i][j+1].component];
+				
+				information.wall_removed[0] = i + 1;
+				information.wall_removed[1] = j + 1;
+				information.wall_removed[2] = 'E';
+			}
+		}
+	}
+	return information;
 }
 
 int main()
@@ -117,4 +174,5 @@ int main()
 	wall_inia(room, wall, row, col);
 	component_count(room, row, col);
 
+	information = check_wall(room, row, col, information);
 }
