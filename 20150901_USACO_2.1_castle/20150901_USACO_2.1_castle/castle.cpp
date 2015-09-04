@@ -1,11 +1,12 @@
 /*
 ID:dirkyao1
 PROG:castle
-Lang:C++
+LANG:C++
 */
 #include<iostream>
 #include<fstream>
 #include<bitset>
+#include<algorithm>
 using namespace std;
 
 typedef struct node{
@@ -18,38 +19,38 @@ typedef struct node{
 
 typedef struct info{
 	int comp_num = 0;
-	int comp_size[2500];
+	int comp_size[2600];
 	int wall_removed[3];
 	int size_combine = 0;
 };
 
 info information;
 
-void wall_inia(square (*room)[50], bitset<4> (*wall)[50], int row, int col)
+void wall_inia(square (*room)[60], bitset<4> (*wall)[60], int row, int col)
 {
 	for (int i = 0; i < row; i++)
 		for (int j = 0; j < col; j++)
 		{
-			if (wall[i][j][0] == 1)
+			if (wall[i][j][3] == 1)
 			{
 				room[i][j].wall_south = 1;
 			}
-			if (wall[i][j][1] == 1)
+			if (wall[i][j][2] == 1)
 			{
 				room[i][j].wall_east = 1;
 			}
-			if (wall[i][j][2] == 1)
+			if (wall[i][j][1] == 1)
 			{
 				room[i][j].wall_north = 1;
 			}
-			if (wall[i][j][3] == 1)
+			if (wall[i][j][0] == 1)
 			{
 				room[i][j].wall_west = 1;
 			}
 		}
 }
 
-void paint(square(*room)[50], int row, int col, int r, int c,int comp)
+void paint(square(*room)[60], int row, int col, int r, int c,int comp)
 {
 	room[r][c].component = comp;
 	information.comp_size[comp]++;
@@ -83,7 +84,7 @@ void paint(square(*room)[50], int row, int col, int r, int c,int comp)
 	}
 }
 
-void component_count(square(*room)[50], int row, int col)
+void component_count(square(*room)[60], int row, int col)
 {
 	for (int i = 0; i < row; i++)
 	{
@@ -98,7 +99,7 @@ void component_count(square(*room)[50], int row, int col)
 	}
 }
 
-bool check_size(info information, square(*room)[50], int row, int col, int r, int c,int direct)
+bool check_size(info information, square(*room)[60], int row, int col, int r, int c,int direct)
 {
 	if (direct == 1)
 	{
@@ -125,7 +126,7 @@ bool check_size(info information, square(*room)[50], int row, int col, int r, in
 	return false;
 }
 
-info check_wall(square(*room)[50], int row, int col,info information)
+info check_wall(square(*room)[60], int row, int col,info information)
 {
 	for (int j = 0; j < col; j++)
 	{
@@ -140,12 +141,14 @@ info check_wall(square(*room)[50], int row, int col,info information)
 				information.wall_removed[1] = j + 1;
 				information.wall_removed[2] = 'N';
 			}
-
-			update = check_size(information, room, row, col, i, j, 2);
+		}
+		for (int i = row - 1; i >= 0; i--)
+		{
+			bool update = check_size(information, room, row, col, i, j, 2);
 			if (update == true)
 			{
-				information.size_combine = information.comp_size[room[i][j].component] + information.comp_size[room[i][j+1].component];
-				
+				information.size_combine = information.comp_size[room[i][j].component] + information.comp_size[room[i][j + 1].component];
+
 				information.wall_removed[0] = i + 1;
 				information.wall_removed[1] = j + 1;
 				information.wall_removed[2] = 'E';
@@ -163,16 +166,29 @@ int main()
 	int col = 0, row = 0;
 	fin >> col >> row;
 	
-	square room[50][50];
-	bitset<4> wall[50][50];
+	square room[60][60];
+	bitset<4> wall[60][60];
+	unsigned int temp;
 	for (int i = 0; i < row; i++)
 	{
 		for (int j = 0; j < col; j++)
-			fin >> wall[i][j];
+		{
+			fin >> temp;
+			wall[i][j] = temp;
+		}
+			
 	}
 	
 	wall_inia(room, wall, row, col);
 	component_count(room, row, col);
 
 	information = check_wall(room, row, col, information);
+	sort(information.comp_size, information.comp_size + information.comp_num + 1);
+
+	fout << information.comp_num << endl;
+	fout << information.comp_size[information.comp_num] << endl;
+	fout << information.size_combine << endl;
+	fout << information.wall_removed[0] << ' ' << information.wall_removed[1] << ' ' << (char)information.wall_removed[2] << endl;
+
+	return 0;
 }
