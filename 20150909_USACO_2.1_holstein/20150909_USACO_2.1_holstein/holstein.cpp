@@ -5,6 +5,7 @@ LANG:C++
 */
 #include<iostream>
 #include<fstream>
+#include<string.h>
 using namespace std;
 
 int V, G;
@@ -31,12 +32,12 @@ int judge_satisfy(int stage)
 	return stage_num;
 }
 
-int count_sum(int stage)
+void count_sum(int stage)
 {
-	vit_now[30] = { 0 };
+	memset(vit_now,0,sizeof(int) * 30);
 	for (int i = 0;i <= stage;i++)
 	{
-		if (decision[stage] == 1)
+		if (decision[i] == 1)
 		{
 			for (int j = 0;j < V;j++)
 			{
@@ -47,7 +48,7 @@ int count_sum(int stage)
 	int state = judge_satisfy(stage);
 	if (state > 0 && state < min_level)
 	{
-		result[30] = { 0 };
+		memset(result, 0, sizeof(int) * 30);
 		min_level = state;
 		for (int i = 0;i <= stage;i++)
 		{
@@ -91,5 +92,14 @@ int main()
 		}
 	}
 
+	solve(0);
 
+	fout << min_level;
+	for (int i = 0;i < G;i++)
+	{
+		if (result[i] == 1)
+			fout << ' ' << i + 1;
+	}
+	fout << endl;
+	return 0;
 }
