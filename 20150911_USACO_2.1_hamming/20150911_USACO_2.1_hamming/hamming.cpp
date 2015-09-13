@@ -18,11 +18,21 @@ void find_index(int *index, int N, int B,int D)
 	index[0] = 0;
 	for (int i = 1; i < N; i++)
 	{
-		for (int j = cur_index; j < N; j++)
+		for (int j = cur_index; j < pow(2, B); j++)
 		{
-			if (dis_map[cur_index][j] >= D)
+			int flag = 1;
+			for (int k = 0; k < i; k++)
+			{
+				if (dis_map[index[k]][j] < D)
+				{
+					flag = 0;
+					break;
+				}
+			}
+			if (flag == 1)
 			{
 				index[i] = j;
+				cur_index = j;
 				break;
 			}
 		}
@@ -68,17 +78,18 @@ int main()
 	find_index(index, N, B, D);
 
 	int i = 0;
-	for (i = 0; i < N % 10; i++)
+	for (i = 0; i < N / 10; i++)
 	{
 		for (int j = 0; j < 9; j++)
-			fout << bin_list[index[i * 10 + j]]<<' ';
-		fout << bin_list[index[i * 10 + 9]] << endl;
+			fout << bin_list[index[i * 10 + j]].to_ulong()<<' ';
+		fout << bin_list[index[i * 10 + 9]].to_ulong() << endl;
 	}
 	for (int j = i * 10; j < N-1; j++)
 	{
-		fout << bin_list[index[i * 10 + j]] << ' ';
+		fout << bin_list[index[j]].to_ulong() << ' ';
 	}
-	fout << bin_list[index[N - 1]] << endl;
+	if (N % 10 != 0)
+		fout << bin_list[index[N - 1]].to_ulong() << endl;
 
 	return 0;
 }
