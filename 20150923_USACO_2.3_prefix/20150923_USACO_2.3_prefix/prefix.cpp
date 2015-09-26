@@ -25,13 +25,13 @@ int find_max(int* candidate, int index)
 	return max;
 }
 
-void dynamic_planning(int *dp,int count,string str)
+void dynamic_planning(int *dp, int count, string str)
 {
-	for (int i = count-1; i >= 0; i--)
+	for (int i = count - 1; i >= 0; i--)
 	{
 		int candidate[10];
 		int index = 0;
-  		for (int j = i + 10; j > i; j--)
+		for (int j = i + 10; j > i; j--)
 		{
 			if (j > count)
 				continue;
@@ -69,7 +69,7 @@ int main()
 	int str_count = 0;
 	string temp;
 	int dp[200500];
-	
+
 	for (int i = 0; i < 202; i++)
 	{
 		fin >> temp;
@@ -83,18 +83,23 @@ int main()
 			break;
 		}
 	}
+	temp = "";
 	while (!fin.eof())
 	{
 		fin >> temp;
-		str.append(temp);
-		str_count += temp.length();
+		if (!fin.eof())
+		{
+			str.append(temp);
+			str_count += temp.length();
+		}
 	}
 
-	ini_map(primitive,count);
+	ini_map(primitive, count);
 	memset(dp, 0, sizeof(int) * 200500);
 
 	dynamic_planning(dp, str_count, str);
 
+	fout << dp[0] << endl;
 
 	return 0;
 }
