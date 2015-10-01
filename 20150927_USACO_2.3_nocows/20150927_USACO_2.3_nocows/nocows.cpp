@@ -28,7 +28,7 @@ int solve(int N, int K)
 				else
 					c = 2;
 
-				table[i][j] = (table[i - 1][k] * smalltable[i - 2][j - 1 - k] + table[i - 1][j - 1 - k] * smalltable[i - 1][k] + table[i - 1][k] * smalltable[i - 1][j - 1 - k])*c;
+				table[i][j] += (table[i - 1][k] * smalltable[i - 2][j - 1 - k] + table[i - 1][j - 1 - k] * smalltable[i - 2][k] + table[i - 1][k] * table[i - 1][j - 1 - k])*c;
 				table[i][j] = table[i][j] % MOD;
 			}
 		}
@@ -36,7 +36,7 @@ int solve(int N, int K)
 		for (int k = 0; k <= N; k++)
 		{
 			smalltable[i - 1][k] = smalltable[i - 2][k] + table[i - 1][k];
-			smalltable[i - 1][k] % MOD;
+			smalltable[i - 1][k] = smalltable[i - 1][k] % MOD; 
 		}
 	}
 	return table[K][N];
