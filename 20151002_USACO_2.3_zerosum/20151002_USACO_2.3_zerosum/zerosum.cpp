@@ -17,7 +17,7 @@ int result_index = 0;
 void value2str()
 {
 	string temp = "";
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < N*2-1; i++)
 	{
 		if (i % 2 == 0)
 			temp.push_back(raw_str[i] + '0');
@@ -40,7 +40,7 @@ int digits2int(int *temp, int temp_index)
 	int value = 0;
 	for (int i = 0; i < temp_index; i++)
 	{
-		value = value * 10 + temp[temp_index] * 10;
+		value = value * 10 + temp[i];
 	}
 	return value;
 }
@@ -52,7 +52,7 @@ int word_analysis()
 	int index = 0;
 
 	int temp[10];
-	int temp_index;
+	int temp_index = 0;
 	for (int i = 0; i < N * 2 - 1; i++)
 	{
 		if (i % 2 == 0)
@@ -91,7 +91,7 @@ int word_analysis()
 
 void dfs(int current)
 {
-	if (current < N)
+	if (current < N-1)
 	{
 		raw_str[current * 2 + 1] = 1;
 		dfs(current + 1);
@@ -119,14 +119,16 @@ int main()
 	ofstream fout("zerosum.out");
 
 	fin >> N;
-	for (int i = 0; i < N; i += 2)
+	for (int i = 0; i < N * 2 - 1; i += 2)
 	{
-		raw_str[i] = i + 1;
+		raw_str[i] = i/2 + 1;
 	}
+
+	dfs(0);
 
 	sort(result, result + result_index);
 
-	for (int i = 1; i < result_index; i++)
+	for (int i = 0; i < result_index; i++)
 	{
 		fout << result[i] << endl;
 	}
