@@ -8,7 +8,7 @@ LANG:C++
 #include<string.h>
 using namespace std;
 
-long long approachs[40][800] = { 0 };
+long long approachs[60][1600] = { 0 };
 
 int main()
 {
