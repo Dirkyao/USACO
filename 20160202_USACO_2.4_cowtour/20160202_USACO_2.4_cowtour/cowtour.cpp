@@ -1,7 +1,13 @@
+/*
+ID:dirkyao1
+PROG:cowtour
+LANG:C++
+*/
 #include<iostream>
 #include<fstream>
 #include<math.h>
 #include<memory.h>
+#include <iomanip>
 using namespace std;
 
 int N;
@@ -10,8 +16,9 @@ char map[151][151];
 double graph[151][151];
 int field_num = 0;
 
-int field[151],origin_max[151];
-int field_radius[151];
+int field[151];
+double origin_max[151];
+double field_radius[151];
 
 double find_min_radius()
 {
@@ -22,7 +29,7 @@ double find_min_radius()
 		{
 			if (field[i] != field[j])
 			{
-				double choice_1 = graph[i][j] + origin_max[i] + origin_max[j];
+				double choice_1 = pow(pow(nodes[i][0] - nodes[j][0], 2) + pow(nodes[i][1] - nodes[j][1], 2), 0.5) + origin_max[i] + origin_max[j];
 				double choice_2 = field_radius[field[i]] < field_radius[field[j]] ? field_radius[field[j]] : field_radius[field[i]];
 
 				double temp_radius = choice_1 < choice_2 ? choice_2 : choice_1;
@@ -46,7 +53,7 @@ void floyd(int current_field)
 			{
 				if (field[i] == current_field)
 				{
-					for (int j = 0;j < current_field;j++)
+					for (int j = 0;j < N;j++)
 					{
 						if (field[j] == current_field)
 						{
@@ -61,10 +68,10 @@ void floyd(int current_field)
 		}
 	}
 
-	int max_1 = 0;
+	double max_1 = 0;
 	for (int i = 0;i < N;i++)
 	{
-		int max_2 = 0;
+		double max_2 = 0;
 		if (field[i] == current_field)
 		{
 			for (int j = 0;j < N;j++)
@@ -123,13 +130,20 @@ void init_map()
 	{
 		for (int j = 0;j < N;j++)
 		{
-			if (map[i][j] == '0')
+			if (i == j)
 			{
-				graph[i][j] = 9999999;
+				graph[i][j] = 0;
 			}
-			else if (map[i][j] == '1')
+			else
 			{
-				graph[i][j] = pow(pow(nodes[i][0] - nodes[j][0], 2) + pow(nodes[i][1] - nodes[j][1], 2), 0.5);
+				if (map[i][j] == '0')
+				{
+					graph[i][j] = 9999999;
+				}
+				else if (map[i][j] == '1')
+				{
+					graph[i][j] = pow(pow(nodes[i][0] - nodes[j][0], 2) + pow(nodes[i][1] - nodes[j][1], 2), 0.5);
+				}
 			}
 		}
 	}
@@ -161,7 +175,7 @@ int main()
 	{
 		floyd(i);
 	}
-	fout << find_min_radius() << endl;
+	fout << fixed << setprecision(6) << find_min_radius() << endl;
 
 	return 0;
 }
