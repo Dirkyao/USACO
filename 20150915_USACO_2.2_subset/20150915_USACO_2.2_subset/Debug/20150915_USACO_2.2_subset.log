@@ -1,4 +1,4 @@
-﻿生成启动时间为 2015/9/15 20:33:01。
+﻿生成启动时间为 2015/12/11 11:33:29。
      1>项目“C:\Program Files\Dirkyao\Git\repository\USACO\20150915_USACO_2.2_subset\20150915_USACO_2.2_subset\20150915_USACO_2.2_subset.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Dirkyao\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt subset.cpp
@@ -10,4 +10,4 @@
 
 已成功生成。
 
-已用时间 00:00:02.09
+已用时间 00:00:01.23
