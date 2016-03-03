@@ -2,22 +2,6 @@
 #include<vector>
 using namespace std;
 
-int maxSequence(int k, int i, vector<int> profits, vector<vector<int> >states, vector<vector<int> > sums, vector<vector<int> >local)
-{
-	int max = 0;
-
-	int profit_one = profits[i] > 0 ? states[k - 1][i - 1] + profits[i] : states[k - 1][i - 1];
-	int profit_two = profits[i] > 0 ? states[k - 1][i - 1] + profits[i] : states[k - 1][i - 1];
-	for (int j = 0; j < i; j++)
-	{
-		int profit_one = states[k - 1][j];
-		int profit_two = sums[j + 1][i];
-		if (profit_one + profit_two > max)
-			max = profit_one + profit_two;
-	}
-	return max;
-}
-
 int maxProfit(int k, vector<int>& prices)
 {
 	if (prices.size() == 0 || k == 0)
@@ -30,45 +14,43 @@ int maxProfit(int k, vector<int>& prices)
 		profits.push_back(*it - *(it - 1));
 	}
 
-	vector<vector<int> >states(k + 1);
-	for (int i = 0; i <= k; i++)
+	if (k > prices.size() / 2)
 	{
-		states[i].resize(prices.size());
-	}
-	states[1][0] = 0;
-
-	vector<vector<int> > local(k + 1);
-	for (int i = 0; i <= k; i++)
-	{
-		local[i].resize(prices.size());
-	}
-	local[1][0] = 0;
-
-	vector<vector<int> >sums(prices.size());
-	for (int i = 0; i < prices.size(); i++)
-	{
-		sums[i].resize(prices.size());
-	}
-	for (int i = 0; i < prices.size(); i++)
-	{
-		sums[i][i] = profits[i];
-		for (int j = i+1; j < prices.size(); j++)
+		int sum = 0;
+		for (vector<int>::iterator it = profits.begin(); it != profits.end(); it++)
 		{
-			sums[i][j] = sums[i][j - 1] + profits[j];
+			if (*it > 0)
+			{
+				sum += *it;
+			}
 		}
+		return sum;
 	}
+	vector<vector<int> > globals(k + 1);
+	for (int i = 0; i <= k; i++)
+	{
+		globals[i].resize(prices.size());
+	}
+	globals[1][0] = 0;
 
+	vector<vector<int> > locals(k + 1);
+	for (int i = 0; i <= k; i++)
+	{
+		locals[i].resize(prices.size());
+	}
+	locals[1][0] = 0;
+
+	
 	for (int i = 1; i <= k; i++)
 	{
 		for (int j = 1; j < prices.size();j++)
 		{
-			int profits_1 = states[i][j - 1];
-			local[i][j] = maxSequence(i, j, profits, states,sums);
-
-			states[i][j] = profits_1 > profits_2 ? profits_1 : profits_2;
+			int last_profit = profits[j]>0 ? profits[j] : 0;
+			locals[i][j] = globals[i - 1][j - 1] + last_profit > locals[i][j - 1] + profits[j] ? globals[i - 1][j - 1] + last_profit : locals[i][j - 1] + profits[j];
+			globals[i][j] = globals[i][j - 1] > locals[i][j] ? globals[i][j-1] : locals[i][j];
 		}
 	}
-	return states[k][prices.size() - 1];
+	return globals[k][prices.size() - 1];
 }
 
 int main()
@@ -79,6 +61,6 @@ int main()
 	{
 		prices.push_back(test[i]);
 	}
-	int benefit = maxProfit(2, prices);
+	int benefit = maxProfit(9, prices);
 	return 0;
 }
