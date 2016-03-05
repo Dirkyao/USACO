@@ -1,0 +1,21 @@
+﻿Build started 2016/3/5 11:52:13.
+     1>Project "E:\programming\github_projects\USACO\20160303_USACO_3.1_contact\20160303_USACO_3.1_contact\20160303_USACO_3.1_contact.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt contact.cpp
+         contact.cpp
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(32): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(33): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(37): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(45): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(63): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(65): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(80): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\programming\github_projects\usaco\20160303_usaco_3.1_contact\20160303_usaco_3.1_contact\contact.cpp(84): warning C4018: '<=' : signed/unsigned mismatch
+       Link:
+         D:\Program Files (x86)\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\programming\github_projects\USACO\20160303_USACO_3.1_contact\Debug\20160303_USACO_3.1_contact.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\programming\github_projects\USACO\20160303_USACO_3.1_contact\Debug\20160303_USACO_3.1_contact.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\programming\github_projects\USACO\20160303_USACO_3.1_contact\Debug\20160303_USACO_3.1_contact.lib" /MACHINE:X86 Debug\contact.obj
+         20160303_USACO_3.1_contact.vcxproj -> E:\programming\github_projects\USACO\20160303_USACO_3.1_contact\Debug\20160303_USACO_3.1_contact.exe
+     1>Done Building Project "E:\programming\github_projects\USACO\20160303_USACO_3.1_contact\20160303_USACO_3.1_contact\20160303_USACO_3.1_contact.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.90

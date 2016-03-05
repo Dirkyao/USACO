@@ -60,13 +60,16 @@ void insert(int start, int end)
 	int index = 0;
 	for (int i = 0; i < length; i++)
 	{
-		index = index + signal[start + i] * pow(2, length - 1 - i);
+		index = index + (signal[start + i]-'0') * pow(2, length - 1 - i);
 	}
 	int signal_index = pow(2, length) - 2 + index;
 
-	for (int i = 0; i < length; i++)
+	if (str_hash[signal_index].num == 0)
 	{
-		str_hash[signal_index].str += signal[start + i];
+		for (int i = 0; i < length; i++)
+		{
+			str_hash[signal_index].str += signal[start + i];
+		}
 	}
 	str_hash[signal_index].index = signal_index;
 	str_hash[signal_index].num++;
@@ -76,7 +79,7 @@ void count()
 {
 	for (int i = 0; i < signal.length(); i++)
 	{
-		for (int j = A; j < B; j++)
+		for (int j = A; j <= B; j++)
 		{
 			if (i + j <= signal.length())
 			{
