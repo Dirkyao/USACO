@@ -18,7 +18,7 @@ typedef struct node{
 
 int A, B, N;
 string signal;
-my_hash str_hash[5000]; 
+my_hash str_hash[10000]; 
 
 bool cmp(my_hash node_1, my_hash node_2)
 {
@@ -31,18 +31,20 @@ void re_sequence()
 
 	int start = pow(2, A) - 2;
 	int end = pow(2, B + 1) - 2;
-	sort(str_hash + start, str_hash + end, cmp);
+	stable_sort(str_hash + start, str_hash + end, cmp);
 
 	int num = 0;
 	int str_num = pow(2, A) - 2;
 	while (num < N)
 	{
 		int temp_num = str_hash[str_num].num;
+		if (temp_num == 0)
+			break;
 		num++;
 		fout << temp_num << endl;
 		
 		int six_count = 1;
-		while (str_num < (pow(2, B + 1) - 2) - (pow(2, A) - 2) & str_hash[str_num].num == temp_num)
+		while (str_num < (pow(2, B + 1) - 2) & str_hash[str_num].num == temp_num)
 		{
 			if (six_count % 6 == 0 || str_hash[str_num + 1].num != temp_num)
 				fout << str_hash[str_num].str.c_str() << endl;
