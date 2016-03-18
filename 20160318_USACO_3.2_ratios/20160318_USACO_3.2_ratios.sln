@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20160318_USACO_3.2_ratios", "20160318_USACO_3.2_ratios\20160318_USACO_3.2_ratios.vcxproj", "{A396D5F9-1ACB-4DDD-9604-9E5CE55F2A50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A396D5F9-1ACB-4DDD-9604-9E5CE55F2A50}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A396D5F9-1ACB-4DDD-9604-9E5CE55F2A50}.Debug|Win32.Build.0 = Debug|Win32
+		{A396D5F9-1ACB-4DDD-9604-9E5CE55F2A50}.Release|Win32.ActiveCfg = Release|Win32
+		{A396D5F9-1ACB-4DDD-9604-9E5CE55F2A50}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
