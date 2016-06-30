@@ -1,0 +1,15 @@
+﻿Build started 2016/6/30 9:31:33.
+     1>Project "C:\Users\Dirkyao\documents\visual studio 2013\Projects\USACO\20130629_USACO_3.4_heritage\20130629_USACO_3.4_heritage\20130629_USACO_3.4_heritage.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt heritage.cpp
+         heritage.cpp
+     1>c:\users\dirkyao\documents\visual studio 2013\projects\usaco\20130629_usaco_3.4_heritage\20130629_usaco_3.4_heritage\heritage.cpp(18): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dirkyao\documents\visual studio 2013\projects\usaco\20130629_usaco_3.4_heritage\20130629_usaco_3.4_heritage\heritage.cpp(34): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Dirkyao\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dirkyao\documents\visual studio 2013\Projects\USACO\20130629_USACO_3.4_heritage\Debug\20130629_USACO_3.4_heritage.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Dirkyao\documents\visual studio 2013\Projects\USACO\20130629_USACO_3.4_heritage\Debug\20130629_USACO_3.4_heritage.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dirkyao\documents\visual studio 2013\Projects\USACO\20130629_USACO_3.4_heritage\Debug\20130629_USACO_3.4_heritage.lib" /MACHINE:X86 Debug\heritage.obj
+         20130629_USACO_3.4_heritage.vcxproj -> C:\Users\Dirkyao\documents\visual studio 2013\Projects\USACO\20130629_USACO_3.4_heritage\Debug\20130629_USACO_3.4_heritage.exe
+     1>Done Building Project "C:\Users\Dirkyao\documents\visual studio 2013\Projects\USACO\20130629_USACO_3.4_heritage\20130629_USACO_3.4_heritage\20130629_USACO_3.4_heritage.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.12
